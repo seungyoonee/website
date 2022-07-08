@@ -1,12 +1,17 @@
 :root {
     --text-color: #f0f4f5;
-    --background-color: #032663;
-    --accent-color: aquamarine;
+    --background-color: #161b22;
+    --accent-color: #58a6ff;
+    --anchor-color: #58a6ff;
+    --hover-color: #57606a;
 }
 
 body {
-    margin: 0;
     font-family: 'Abel';
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 a {
@@ -14,27 +19,333 @@ a {
     color: var(--text-color);
 }
 
+ul {
+    list-style: none;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    padding-left: 0;
+}
+
+/* ****** */
+/* navbar */
+/* ****** */
+
 .navbar {
+    display: flex;
+    font-size: 22px;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar ul {
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    padding-left: 0;
+}
+
+.navbar-menu li {
+    padding: 8px 12px;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+}
+
+.navbar-icons li {
+    padding: 8px 12px;
+}
+
+.navbar-menu li:hover {
+    color: var(--hover-color);
+}
+
+.navbar-toggle {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+/* ***** */
+/* intro */
+/* ***** */
+
+.intro-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: url(img/turing-machine.jpg) no-repeat 50% 50%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.intro1, .intro2 {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 1;
+}
+
+.intro1 h1 {
+    animation: fadeInDown;
+    opacity: 1;
+}
+
+.intro2 p {
+    animation: fadeInUp;
+}
+
+
+/* ***** */
+/* about */
+/* ***** */
+
+.about {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.about-wrapper {
+    align-items: center;
+}
+.about-wrapper img {
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+/* *********** */
+/* experiences */
+/* *********** */
+
+.experiences {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.experiences-ul {
+    display: flex;
+    align-items: center;
+    width: 20px;
+}
+
+.experiences-ul img {
+
+    width: 20px;
+}
+
+/* --------------------------------------- */
+/* --------------------------------------- */
+/* --------------------------------------- */
+
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu.active,
+    .navbar-icons.active {
+        display: flex;
+    }
+}
+
+
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+/* 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'Abel';
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url(img/turing-machine.jpg) no-repeat 50% 50%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.65;
+ }
+
+ .navbar__logo {
+     position: fixed;
+     float: left;
+     margin: 16px 36px;
+     color: var(--text-color);
+     font-weight: bold;
+     font-size: 22px;
+ }
+
+ nav {
+     position: fixed;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+ }
+
+ nav ul {
+     list-style: none;
+     background: var(--background-color);
+     overflow: hidden;
+     color: var(--text-color);
+     padding: 0;
+     text-align: center;
+     margin: 0;
+     transition: 1s;
+ }
+
+ nav.black ul {
+     background: var(--background-color);
+ }
+
+ nav ul li {
+     display: inline-block;
+     padding: 20px;
+ }
+
+ nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 20;
+    letter-spacing: 2px;
+ } */
+/* 
+body {
+    margin: 0;
+    font-family: 'Abel';
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url("img/turing-machine.jpg");
+    opacity: 0.65;
+    width: 100%;
+    height: 600px;
+    background-position: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-color);
     background-color: var(--background-color);
     padding: 8px 12px;
 }
 
 .navbar__logo {
-    font-size: 24px;
+    font-size: 22px;
     color: var(--text-color);
+    position: fixed;
+    float: left;
+    margin: 16px 36px;
+    font-weight: bold;
 }
 
 .navbar__logo i {
-    color: var(--accent-color);
+    color: var(--text-color);
 }
 
 .navbar__menu {
     display: flex;
     list-style: none;
+    background: rgba(0,0,0,0);
+    overflow: hidden;
+    padding: 0;
     padding-left: 0;
+    text-align: center;
+    margin: 0;
+    transition: 1s;
 }
 
 .navbar__menu li {
@@ -42,9 +353,20 @@ a {
 }
 
 .navbar__menu li:hover {
-    background-color: var(--accent-color);
+    background-color: var(--hover-color);
     border-radius: 4px;
 }
+
+
+nav.black ul {
+    background: #000;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 20px;
+}
+
 
 .navbar__icons {
     display: flex;
@@ -60,16 +382,58 @@ a {
 .navbar__toggleBtn {
     display: none;
     position: absolute;
-    right: 32px;
+    top: 18px;
+    right: 28px;
     font-size: 24px;
-    color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.scrolling-active {
+    background-color: var(--background-color);
+    box-shadow: 0 3px 1rem rgba(0,0,0,.1);
+}
+.intro {
+    opacity: 0.65;
+    width: 100%;
+    height: 600px;
+    background-image: url("img/turing-machine.jpg");
+    background-position: center;
+}
+.intro__overlay {
+    text-align: center;
+    align-items: center;
+}
+
+.intro__container {
+    text-align: center;
+    align-items: center;
+}
+
+.intro__content {
+    text-align: center;
+    align-items: center;
+}
+.intro1 {
+    animation: fadeInDown 5s;
+}
+
+.intro2 {
+    animation: fadeInUp 5s;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: 8px 12px;
 }
 
 .about__row {
-    display: flex;
     list-style: none;
     text-align: center;
     align-items: center;
+    color: var(--text-color);
     background-color: var(--background-color);
     padding: 8px 12px;
 }
@@ -80,26 +444,58 @@ a {
     border-radius: 50%;
 }
 
-.experiences {
+.about__row a {
+    color: #58a6ff;
+}
+
+.experiences__header {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.experiences__list1,
+.experiences__list2 {
     display: flex;
-    justify-content: space-between;
+    text-align: center;
     align-items: center;
-    background-color: var(--background-color);
-    padding: 8px 12px;
+    list-style: none;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    padding-left: 0;
 }
 
-.experiences {
-    display: flex;
-    text-align: center;
-}
-.img-responsive {
-    text-align: center;
-    justify-content: space-between;
-    width: 48px;
-    height: 48px;
+.experiences__list1 li,
+.experiences__list2 li {
+    margin-right: auto;
+    margin-left: auto;
 }
 
-/* dynamic layout */
+.experiences__container img {
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+}
+
+.experiences__container img:hover {
+    opacity: 1;
+}
+.projects__header {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.resume__header {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.contact__header {
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* dynamic layout
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -133,3 +529,25 @@ a {
         display: flex;
     }
 }
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
