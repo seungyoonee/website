@@ -36,7 +36,6 @@ h2 {
 .navbar {
     display: flex;
     font-size: 22px;
-
     align-items: center;
     justify-content: space-evenly;
 }
@@ -128,9 +127,15 @@ h2 {
 .about-wrapper {
     align-items: center;
 }
+
+.about-wrapper div {
+    text-align: center;
+}
+
 .about-wrapper img {
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     align-items: center;
     text-align: center;
 }
@@ -139,22 +144,40 @@ h2 {
 /* experiences */
 /* *********** */
 
-.experiences {
+.experiences-skills {
+    display: incline-block;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.experiences-wrapper ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* width: auto; */
+}
+
+.experiences-wrapper li {
     margin: 0;
     padding: 0;
     width: 100%;
+    text-align: center;
+    padding: 20px 20px;
 }
 
-.experiences-ul {
-    display: flex;
-    align-items: center;
-    width: 20px;
+.experiences-wrapper img {
+    width: 15vh;
+    height: 15vh;
 }
 
-.experiences-ul img {
+/* ******** */
+/* projects */
+/* ******** */
 
-    width: 20px;
-}
+
 
 /* --------------------------------------- */
 /* --------------------------------------- */
@@ -194,8 +217,50 @@ h2 {
     .navbar-icons.active {
         display: flex;
     }
+
+    .experiences-skills ul {
+        display: block;
+        align-items: center;
+        text-align: center;
+        column-count: 2;
+    }
+
+    .experiences-skills li {
+        /* text-align: center; */
+        /* margin: 0; */
+        padding: 0;
+    }
 }
 
+/* ******** */
+/* projects */
+/* ******** */
+
+.projects-row {
+    display: table;
+    text-align: center;
+    margin-left: 50px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.projects-item {
+    display: block;
+    margin: 50px;
+}
+
+.projects-info, .description {
+    display: none;
+}
+
+.projects-wrapper img {
+    max-width: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: 0.3s;
+    vertical-align: middle;
+    width: 50vh;
+}
 
 
 @keyframes fadeInDown {
@@ -218,7 +283,7 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
-
+}
 /* 
 html, body {
     margin: 0;
